@@ -7,36 +7,55 @@
 // When the user performs one of the operations,
 // output the result to another DOM element of your choice.
 
-/*
-  Create a function that multiplies two numbers
-  passed in as arguments. Return the product.
- */
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+
+function subtractNumbers(num1, num2) {
+  return num1 - num2;
+}
+
+function multiplyNumbers(num1, num2) {
+  return num1 * num2;
+}
+
+function divideNumbers(num1, num2) {
+  return num1 / num2;
+}
+
+function performOperation(num1, num2, operation) {
+  return operation(num1, num2)
+}
+
+// An experiment in switch case
+function onButtonClick(clickEvt) {
+  var num1 = Number(document.getElementById('num1_inpt').value)
+  var num2 = Number(document.getElementById('num2_inpt').value)
+  var id = clickEvt.target.id
+  var results = document.getElementById('results')
+  switch (id) {
+    case "add":
+      results.innerText = performOperation(num1, num2, addNumbers); break
+    case "subtract":
+      results.innerText = performOperation(num1, num2, subtractNumbers); break
+    case "multiply":
+      results.innerText = performOperation(num1, num2, multiplyNumbers); break
+    case "divide":
+      results.innerText = performOperation(num1, num2, divideNumbers); break
+  }
+}
+
+// Event listeners
+document.getElementById('add').addEventListener('click', onButtonClick)
+document.getElementById('subtract').addEventListener('click', onButtonClick)
+document.getElementById('multiply').addEventListener('click', onButtonClick)
+document.getElementById('divide').addEventListener('click', onButtonClick)
 
 
-/*
-  Create a function that adds two numbers
-  passed in as arguments. Return the sum.
- */
-
-
-/*
-  Create a function that subtracts two numbers
-  passed in as arguments. Return the difference.
- */
-
-
-/*
-  Create a function that divides two numbers
-  passed in as arguments. Return the quotient.
- */
 
 
 
-/*
-  Create a function that accepts three arguments.
-    1. First number
-    2. Second number
-    3. A function that performs an operation on them
 
-  Return the value of the operation.
- */
+
+
+
